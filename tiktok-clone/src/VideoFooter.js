@@ -4,21 +4,23 @@ import "./VideoFooter.css"
 // import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 
-function VideoFooter() {
+function VideoFooter({channel, description, song}) {
   return (
     <div className="videoFooter">
      <div className="videoFooter__text">
-        <h3>@shonda</h3>
-        <p> This is a description</p>
-        <MusicNoteIcon/>
+      <h3>@{channel}</h3>
+      <p>{description}</p>
+      <div className="videoFooter__ticker">
+        <MusicNoteIcon className="videoFooter__icon"/>
         <Ticker mode="smooth">
           {({index})=>(
             <>
-            <h1>YOOOO whats up guys</h1>
+            <p>{song}</p>
             </>
 
           )}
         </Ticker>
+      </div>
      </div>
      <img className="videoFooter__record" src="https://static.thenounproject.com/png/934821-200.png" alt=""></img>
     </div>
